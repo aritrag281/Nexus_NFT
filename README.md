@@ -18,12 +18,12 @@
 
 ### 2. Install Dependencies:
 ```
-$ cd nft_marketplace
+$ cd Nexus_NFT
 $ npm install
 ```
 ### 3. Boot up local development blockchain
 ```
-$ cd nft_marketplace
+$ cd Nexus_NFT
 $ npx hardhat node
 ```
 
@@ -34,7 +34,7 @@ $ npx hardhat node
 
 
 ### 5. Migrate Smart Contracts
-`npx hardhat run src/backend/scripts/deploy.js --network localhost`
+`npx hardhat run src/backend/scripts/deploy.js --network sepolia`
 
 ### 6. Run Tests
 `$ npx hardhat test`

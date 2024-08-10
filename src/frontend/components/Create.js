@@ -16,7 +16,6 @@ const CreateNFT = ({ marketplace, nft }) => {
   const [description, setDescription] = useState('')
   const navigate = useNavigate()
   const uploadToPinata = async () => {
-    event.preventDefault()
     const file = imageFile
     if (file) {
       try {
