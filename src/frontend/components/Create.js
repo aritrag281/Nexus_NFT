@@ -40,7 +40,8 @@ const CreateNFT = ({ marketplace, nft }) => {
   }
 
   const createNFT = async () => {
-    if (!imageFile ||!image || !price || !name || !description) return
+    console.log(image)
+    if (!imageFile  || !price || !name || !description) return
     await uploadToPinata()
     
     try {
