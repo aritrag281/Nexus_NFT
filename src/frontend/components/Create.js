@@ -10,7 +10,6 @@ const apiSecret = '60f052b9ee97dcd20b79a90f5668a28664f2055ef9f724e7d841bf11ad72d
 
 const CreateNFT = ({ marketplace, nft }) => {
   const [imageFile,setImageFile] = useState(null)
-  const [image, setImage] = useState('')
   const [price, setPrice] = useState(null)
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
@@ -31,8 +30,9 @@ const CreateNFT = ({ marketplace, nft }) => {
           },
         });
 
-        setImage(response.data.IpfsHash);
+        //setImage(response.data.IpfsHash);
         console.log('File uploaded to IPFS with CID:', response.data.IpfsHash);
+        return response.data.IpfsHash
       } catch (error) {
         console.error('Error uploading file to IPFS:', error.message);
       }
@@ -40,13 +40,14 @@ const CreateNFT = ({ marketplace, nft }) => {
   }
 
   const createNFT = async () => {
-    console.log(image)
     if (!imageFile  || !price || !name || !description) return
-    await uploadToPinata()
+    const cid = await uploadToPinata()
+    
+    console.log(cid)
     
     try {
       const metadata = {
-        image: `https://gateway.pinata.cloud/ipfs/${image}`,
+        image: `https://gateway.pinata.cloud/ipfs/${cid}`,
         price,
         name,
         description
