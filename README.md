@@ -1,4 +1,8 @@
-# NFT Marketplace
+# Nexus NFT
+
+Nexus NFT - https://nexus-nft-nine.vercel.app/ ( Metamask Connection needs to be done )
+
+Nexus NFT Working Video Demonstration - https://drive.google.com/file/d/1Bpe6doIekC3ZgsIYnmkFOeuFqadpLCT0/view
 
 ## Technology Stack & Tools
 
